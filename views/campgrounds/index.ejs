@@ -1,0 +1,40 @@
+<% include ../partials/header %>
+
+
+
+
+
+
+
+<div class="container">
+    <header class="jumbotron">
+        <div class="container">
+            <h>hellow camgroungs</h>
+            <p>
+                this it the play to play
+            </p>
+            <p>
+                <a class="btn btn-primary btn-large" href="/campgrounds/new">create new</a>
+            </p>
+        </div>
+    </header>
+
+
+    <div class="row text-center" style="display:flex; flex-wrap: wrap;">
+        <% campgrounds.forEach(function(campgrounds){%>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img width="200px" margin="1px" src="<%=campgrounds.image%>">
+                <div class="caption">
+                    <%=campgrounds.name%>
+                    
+                </div>
+                <a href="/campgrounds/<%=campgrounds._id%>" class="btn btn-primary">detail</a>
+            </div>
+        </div>
+
+
+        <%});%>
+    </div>
+</div>
+<% include ../partials/footer %>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>
+        yelcamp
+    </title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/stylesheets/main.css">
+</head>
+<body>
+
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a class="navbar-brand" href="/">yelpcamp</a>
+                    </div>
+                         
+                        <ul class=" nav navbar-right" >
+                         <%  if(!currentUser){ %>
+                            <li> <a href="/login">login </a></li>
+                            <li> <a href="/register">sign up </a></li>
+                         <%  }else{%>
+                            <li> <a href="">"hola!"--<%=currentUser.username%>-- </a></li>
+                            <li> <a href="/logout">sign out </a></li>
+                           <%} %>                       
+                        </ul>
+                           
+            
+                    
+                </div>
+            
+            
+            
+            </nav>
+
+    <div class="container">
+   <%if(error&&error.length>0){  %>
+        <div class="alert alert-danger" role="alert">
+    <h1><%=error%></h1>
+   </div>
+<%}%>
+<%if(success&&success.length>0){  %>
+<div class="alert alert-success" role="alert">
+    <h1><%=success%></h1>
+   </div>
+   <%}%>
+    </div>
+
