@@ -22,13 +22,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
 app.use(methodOverride("_method"));
-mongoose.connect(
-  "mongodb+srv://ashutosh:ashu@firstcluster-qp4ft.mongodb.net/test?retryWrites=true&w=majority",
-  {
-    useUnifiedTopology: true,
-    useNewUrlParser: true
-  }
-);
+//var mongoURI = "mongodb://localhost:27017/yelp_camp";
+var mongoURI =
+  "mongodb+srv://ashutosh:ashu@firstcluster-qp4ft.mongodb.net/test?retryWrites=true&w=majority";
+mongoose.connect(mongoURI, {
+  useUnifiedTopology: true,
+  useNewUrlParser: true,
+  useCreateIndex: true,
+  useFindAndModify: false
+});
 //schema setup
 //seedDB();
 app.use(flash());
