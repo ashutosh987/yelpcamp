@@ -1,7 +1,7 @@
 var express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
-  server = app.listen(3000 || process.env.PORT, listening),
+  server = app.listen(process.env.PORT || 3000, listening),
   bodyParser = require("body-parser"),
   flash = require("connect-flash"),
   passport = require("passport"),
