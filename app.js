@@ -1,7 +1,7 @@
 var express = require("express"),
   app = express(),
   mongoose = require("mongoose"),
-  server = app.listen(3000, listening),
+  server = app.listen(3000 || process.env.PORT, listening),
   bodyParser = require("body-parser"),
   flash = require("connect-flash"),
   passport = require("passport"),
@@ -25,6 +25,7 @@ app.use(methodOverride("_method"));
 //var mongoURI = "mongodb://localhost:27017/yelp_camp";
 var mongoURI =
   "mongodb+srv://ashutosh:ashu@firstcluster-qp4ft.mongodb.net/test?retryWrites=true&w=majority";
+// "mongodb://localhost:27017/yelp_";
 mongoose.connect(mongoURI, {
   useUnifiedTopology: true,
   useNewUrlParser: true,
